@@ -1,0 +1,14 @@
+﻿.formulario {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 0.5rem;
+}
