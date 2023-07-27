@@ -14,7 +14,7 @@
         </p>
     </div>
     <div class="d-flex flex-column col-auto h-auto p-0">
-        <a asp-action="Cadastro" asp-controller="Home" class="btn btn-success">Adicionar Cliente</a>
+        <a asp-action="CadastrarCliente" asp-controller="Gerenciamento" class="btn btn-success">Adicionar Cliente</a>
     </div>
 </div>
 
@@ -132,7 +132,7 @@
                 <td>@c.DataCadastro</td>
                 <td>@(c.Bloqueado == 1 ? "Sim" : "Não")</td>
                 <td>
-                    <form asp-action="EditarCliente" asp-controller="Home" method="post">
+                    <form asp-action="EditarCliente" asp-controller="Gerenciamento" method="post">
                         <input type="hidden" name="id" value="@c.Id">
                         <button type="submit" class="btn btn-primary"><em class="bx bx-edit"></em></button>
                     </form>

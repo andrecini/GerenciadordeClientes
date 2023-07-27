@@ -1,6 +1,6 @@
 using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
-using Gerenciador_De_Clientes.Models;
+using Gerenciador_De_Clientes.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +10,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>
     (options => options.UseMySql("Server=localhost;Database=SmartHint;Uid=root;Pwd=andrecini;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.34-mysql")));
+
+builder.Services.AddScoped<IRepository, Repository>();
 
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
 
