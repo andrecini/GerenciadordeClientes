@@ -5,20 +5,22 @@
     var filtro = ViewBag.Filtro as Filtro;
 }
 
-<div class="d-flex row w-100 py-4 m-0">
-    <div class="d-flex flex-column col p-0">
+<link href="~/css/pages/home.css" rel="stylesheet" />
+
+<div class="info">
+    <div class="box-title">
         <h1>Listagem de Clientes</h1>
         <p>
             Consulte os seus Clientes cadastrados na
             sua Loja ou realize o cadastro de novos Cliente.
         </p>
     </div>
-    <div class="d-flex flex-column col-auto h-auto p-0">
+    <div class="box-button">
         <a asp-action="CadastrarCliente" asp-controller="Gerenciamento" class="btn btn-success">Adicionar Cliente</a>
     </div>
 </div>
 
-<form id="form-filtros-selecionados" asp-action="Filtrar" asp-controller="Home" class="d-flex w-100 justify-content-end align-items-center flex-wrap">
+<form id="form-filtros-selecionados" asp-action="Filtrar" asp-controller="Home" class="selector-filtros">
     @if (filtro != null)
     {
         <input type="hidden" value="@filtro.NomeRazaoSocial" name="NomeRazaoSocial" id="nomeRazaoSocial-span" />
@@ -28,26 +30,26 @@
         <input type="hidden" value="@filtro.Bloqueado" name="Bloqueado" id="bloqueado-span" />
 
 
-        <div class="d-flex align-items-center p-3 gap-2">
+        <div class="selected-filters">
             @if (!string.IsNullOrEmpty(filtro.NomeRazaoSocial))
             {
-                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('nomeRazaoSocial-span')">@filtro.NomeRazaoSocial <em class="bx bxs-x-circle ms-1 text-white fs-5"></em></button>
+                <button type="button" class="btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('nomeRazaoSocial-span')">@filtro.NomeRazaoSocial <em class="bx bxs-x-circle"></em></button>
             }
             @if (!string.IsNullOrEmpty(filtro.Email))
             {
-                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('email-span')">@filtro.Email <em class="bx bxs-x-circle ms-1 text-white fs-5"></em></button>
+                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('email-span')">@filtro.Email <em class="bx bxs-x-circle"></em></button>
             }
             @if (!string.IsNullOrEmpty(filtro.Telefone))
             {
-                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('telefone-span')">@filtro.Telefone <em class="bx bxs-x-circle ms-1 text-white fs-5"></em></button>
+                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('telefone-span')">@filtro.Telefone <em class="bx bxs-x-circle"></em></button>
             }
             @if (filtro.DataCadastro.ToString("ddMMyy") != "010101")
             {
-                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('dataCadastro-span')">@filtro.DataCadastro <em class="bx bxs-x-circle ms-1 text-white fs-5"></em></button>
+                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('dataCadastro-span')">@filtro.DataCadastro <em class="bx bxs-x-circle"></em></button>
             }
             @if (filtro.Bloqueado != 2)
             {
-                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('bloqueado-span')">@(filtro.Bloqueado == 0 ? "Não" : "Sim") <em class="bx bxs-x-circle ms-1 text-white fs-5"></em></button>
+                <button type="button" class="d-flex align-items-center btn badge rounded-pill text-bg-secondary" onclick="apagaFiltro('bloqueado-span')">@(filtro.Bloqueado == 0 ? "Não" : "Sim") <em class="bx bxs-x-circle"></em></button>
             }
         </div>
     }
@@ -55,8 +57,8 @@
     <button type="button" onclick="toggleFiltro()" class="btn btn-primary fit-content">Filtrar</button>
 </form>
 
-<form id="form-filtro" asp-action="Filtrar" asp-controller="Home" class="container-fluid flex-column p-0 d-none">
-    <div class="d-flex row align-items-end w-100 gap-1 m-0 mb-2">
+<form id="form-filtro" asp-action="Filtrar" asp-controller="Home" class="filtro d-none">
+    <div class="box-input">
         <!-- Nome/Razão Social -->
         <div class="col-3 p-0">
             <label for="nomeRazaoSocial" class="form-label">Nome/Razão Social:</label>
@@ -92,7 +94,7 @@
         </div>
     </div>
 
-    <div class="d-flex w-100 justify-content-end gap-1">
+    <div class="box-buttons">
         <button type="reset" class="btn btn-secondary">Limpar Filtros</button>
         <button type="submit" class="btn btn-success">Aplicar Filtros</button>
     </div>
