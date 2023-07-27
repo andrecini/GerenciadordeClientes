@@ -1,0 +1,13 @@
+CREATE DATABASE SmartHint;
+
+USE SmartHint;
+
+CREATE TABLE Cliente (
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  NomeRazaoSocial VARCHAR(255) NOT NULL,
+  Email VARCHAR(50),
+  Telefone VARCHAR(50),
+  DataCadastro DATETIME,
+  Bloqueado BOOLEAN,
+  Tipo INT
+);

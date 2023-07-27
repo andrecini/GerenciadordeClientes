@@ -1,0 +1,33 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+}
+
+.fit-content {
+    height: fit-content !important;
+}
+
+.count-paginacao {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    margin: 16px 0;
+}
