@@ -17,17 +17,11 @@
 </div>
 
 <form asp-action="Cadastrar" asp-controller="Gerenciamento" method="post" class="formulario">
-    <h5>Dados do Cliente</h5>
-
-    <!-- Tipo Pessoa -->
-    <div class="mb-2">
-        <label for="tipo" class="form-label">Tipo de Pessoa:</label>
-        <select class="form-select" id="tipo" name="Tipo" data-bs-toggle="tooltip" title="Selecione o tipo de Pessoa." required>
-            <option value="">Selecione uma opção</option>
-            <option value="1">Pessoa Física</option>
-            <option value="0">Pessoa Jurídica</option>
-        </select>
+    <div class="w-100 mb-4">
+        <h5 class="text-black p-0 m-0">Infomações do Cliente</h5>
+        <hr class="text-black-50 p-0 m-0" />
     </div>
+
 
     <!-- Nome/Razão Social -->
     <div class="mb-2">
@@ -52,16 +46,31 @@
         <label for="dataCadastro" class="form-label">Data de Cadastro:</label>
         <input type="date" class="form-control" id="dataCadastro" name="DataCadastro" data-bs-toggle="tooltip" title="Selecione o tipo de Pessoa." required>
     </div>
+        
+    <div class="w-100 mt-2 mb-4">
+        <h5 class="text-black p-0 m-0">Infomações Pessoais</h5>
+        <hr class="text-black-50 p-0 m-0" />
+    </div>
+
+    <!-- Tipo Pessoa -->
+    <div class="mb-2">
+        <label for="tipo" class="form-label">Tipo de Pessoa:</label>
+        <select class="form-select" id="tipo" name="Tipo" data-bs-toggle="tooltip" title="Selecione o tipo de Pessoa." required>
+            <option value="">Selecione uma opção</option>
+            <option value="1">Pessoa Física</option>
+            <option value="0">Pessoa Jurídica</option>
+        </select>
+    </div>
 
     <!-- CPF ou CNPJ -->
-    <div class="mb-2">
+    <div>
         <label for="cpfCnpj" class="form-label">CPF:</label>
-        <input type="text" class="form-control" id="cpfCnpj" name="CpfCnpj" data-bs-toggle="tooltip" title="Insira o CPF ou o CNPJ do Cliente." required>
+        <input type="text" class="form-control mb-2" id="cpfCnpj" name="CpfCnpj" data-bs-toggle="tooltip" title="Insira o CPF ou o CNPJ do Cliente." required>
     </div>
 
     <!-- Inscrição Estadual para Pessoa Física -->
-    <div id="form-check-inscricaoEstadualPessoaFisica" class="form-check form-check-inscricaoEstadualPessoaFisica mb-2">
-        <input type="checkbox" class="form-check-input" id="inscricaoEstadualPessoaFisica" data-bs-toggle="tooltip" title="Informe a Incrição Estadual do cliente">
+    <div id="form-check-inscricaoEstadualPessoaFisica" class="form-check form-check-inscricaoEstadualPessoaFisica">
+        <input type="checkbox" class="form-check-input mb-2" id="inscricaoEstadualPessoaFisica" data-bs-toggle="tooltip" title="Informe a Incrição Estadual do cliente">
         <label class="form-check-label" for="inscricaoEstadualPessoaFisica">
             Inscrição Estadual para Pessoa Física
         </label>
@@ -70,21 +79,21 @@
     <!-- Inscrição Estadual -->
     <div class="mb-2">
         <label for="inscricaoEstadual" class="form-label">Inscrição Estadual</label>
-        <input type="text" class="form-control" id="inscricaoEstadual" name="IncricaoEstadual" data-bs-toggle="tooltip" title="Inscrição Estadual do Cliente, selecionar Isento caso assim for.">
+        <input type="text" class="form-control mb-2" id="inscricaoEstadual" name="IncricaoEstadual" data-bs-toggle="tooltip" title="Inscrição Estadual do Cliente, selecionar Isento caso assim for.">
     </div>
 
     <!-- Isento -->
-    <div id="form-check-isento" class="form-check mb-2">
+    <div id="form-check-isento" class="form-check">
         <input type="checkbox" class="form-check-input" id="isento" name="Isento" data-bs-toggle="tooltip" title="Selecione se for isento de Incrição Estadual" value="1">
-        <label class="form-check-label" for="isento">
+        <label class="form-check-label mb-2" for="isento">
             Isento
         </label>
     </div>
 
     <!-- Gênero -->
-    <div class="mb-2">
+    <div>
         <label for="genero" class="form-label">Gênero:</label>
-        <select class="form-select" id="genero" name="Genero" data-bs-toggle="tooltip" title="Selecione o gênero do Cliente.">
+        <select class="form-select mb-2" id="genero" name="Genero" data-bs-toggle="tooltip" title="Selecione o gênero do Cliente.">
             <option value="">Selecione uma opção</option>
             <option value="1">Masculino</option>
             <option value="2">Feminino</option>
@@ -93,9 +102,14 @@
     </div>
 
     <!-- Data de Nascimeto -->
-    <div class="mb-2">
+    <div>
         <label for="dataNascimento" class="form-label">Data de Nascimento:</label>
-        <input type="date" class="form-control" id="dataNascimento" name="DataNascimento" data-bs-toggle="tooltip" title="Data de nascimento do Cliente.">
+        <input type="date" class="form-control mb-2" id="dataNascimento" name="DataNascimento" data-bs-toggle="tooltip" title="Data de nascimento do Cliente.">
+    </div>
+
+    <div class="w-100 mt-2 mb-4">
+        <h5 class="text-black p-0 m-0">Senha de Acesso</h5>
+        <hr class="text-black-50 p-0 m-0" />
     </div>
 
     <!-- Senha -->
@@ -108,6 +122,11 @@
     <div class="mb-2">
         <label for="confirmacao" class="form-label">Confirmação da Senha:</label>
         <input type="password" minlength="8" maxlength="15" class="form-control" id="confirmacao" name="Confirmacao" data-bs-toggle="tooltip" title="Repita a senha do cliente" required>
+    </div>
+
+    <div class="w-100 mt-2 mb-4">
+        <h5 class="text-black p-0 m-0">Situação do Cliente</h5>
+        <hr class="text-black-50 p-0 m-0" />
     </div>
 
     <!-- Bloqueado -->
