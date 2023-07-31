@@ -1,4 +1,4 @@
-# GerenciadordeClientes
+# Gerenciador de Clientes
 Teste para a SmartHint
 
 ## Requisitos
@@ -82,7 +82,9 @@ Cadastro de Clientes
 para a tela de Adicionar Cliente.
 - Caso o Usuário-Lojista selecione o botão "Voltar", o mesmo deverá ser redirecionado
 para a tela de Clientes;
-- Na área principal do cadastro, deverão ser apresentados os seguintes campos:
+
+### Cadastro
+Na área principal do cadastro, deverão ser apresentados os seguintes campos:
 
 1. **Nome do Cliente/Razão Social:**
 - Campo obrigatório do tipo input que deverá receber caracteres alfa-numéricos
