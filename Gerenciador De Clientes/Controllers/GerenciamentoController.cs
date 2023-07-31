@@ -56,5 +56,15 @@ namespace Gerenciador_De_Clientes.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult Bloquear([FromBody]int id)
+        {
+            var cliente = _contexto.Cliente.Find(id);
+            cliente.Bloqueado = cliente.Bloqueado == 1 ? 0 : 1;            
+
+            var editado = _repository.AtualizarCliente(cliente);
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.selected-filters{
+.selected-filters {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -17,16 +17,16 @@
     gap: 0.5rem;
 }
 
-.selected-filters .badge {
-    display: flex !important;
-    align-items: center !important;
-}
+    .selected-filters .badge {
+        display: flex !important;
+        align-items: center !important;
+    }
 
-.selected-filters .badge em {
-    margin-left: 0.25rem;
-    font-size: 1rem;
-    color: white;
-}
+        .selected-filters .badge em {
+            margin-left: 0.25rem;
+            font-size: 1rem;
+            color: white;
+        }
 
 .filtro {
     display: flex;
@@ -36,18 +36,77 @@
     padding: 0;
 }
 
-.filtro .box-input {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    width: 100%;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    .filtro .box-input {
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        width: 100%;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .filtro .box-buttons {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
 }
 
-.filtro .box-buttons {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 0.5rem;
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
 }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 15px;
+        width: 15px;
+        left: 2.5px;
+        bottom: 2.5px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
